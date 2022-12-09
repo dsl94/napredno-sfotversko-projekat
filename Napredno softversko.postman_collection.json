@@ -1,0 +1,373 @@
+{
+	"info": {
+		"_postman_id": "0195a05f-1746-432e-9201-c55e0958c28f",
+		"name": "Napredno softversko",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Hello world",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Prijava korisnika",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"admin@mail.com\",\n    \"password\": \"test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/auth/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Kreiranje korisnika",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwiaWF0IjoxNjcwNjA4MzkwLCJleHAiOjE2NzA2MTE5OTB9.QpB34jNbD4_kxSwbsrWNh1gmyABC4MqEvkuZ8cygdvE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"test2@email.com\",\n    \"name\": \"Test user\",\n    \"password\": \"test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. Kreiranje tima",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwiaWF0IjoxNjcwNjA4MzkwLCJleHAiOjE2NzA2MTE5OTB9.QpB34jNbD4_kxSwbsrWNh1gmyABC4MqEvkuZ8cygdvE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Tim 1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/team",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"team"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. Izmena tima",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwiaWF0IjoxNjcwNjA4MzkwLCJleHAiOjE2NzA2MTE5OTB9.QpB34jNbD4_kxSwbsrWNh1gmyABC4MqEvkuZ8cygdvE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Tim one\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/team/b15326f4-afb4-4f10-b2eb-bc0f5525bd58",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"team",
+						"b15326f4-afb4-4f10-b2eb-bc0f5525bd58"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6. Citanje tima po id-u",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwiaWF0IjoxNjcwNjA4MzkwLCJleHAiOjE2NzA2MTE5OTB9.QpB34jNbD4_kxSwbsrWNh1gmyABC4MqEvkuZ8cygdvE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/team/6834177c-18b7-4688-9358-96318bbfd022",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"team",
+						"6834177c-18b7-4688-9358-96318bbfd022"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7. Citanje svih timova",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwiaWF0IjoxNjcwNjA4MzkwLCJleHAiOjE2NzA2MTE5OTB9.QpB34jNbD4_kxSwbsrWNh1gmyABC4MqEvkuZ8cygdvE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/team",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"team"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "8. Brisanje tima",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwiaWF0IjoxNjcwNjA4MzkwLCJleHAiOjE2NzA2MTE5OTB9.QpB34jNbD4_kxSwbsrWNh1gmyABC4MqEvkuZ8cygdvE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/team/b15326f4-afb4-4f10-b2eb-bc0f5525bd58",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"team",
+						"b15326f4-afb4-4f10-b2eb-bc0f5525bd58"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "10. Dodavanje korisnika u tim",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwiaWF0IjoxNjcwNjA4MzkwLCJleHAiOjE2NzA2MTE5OTB9.QpB34jNbD4_kxSwbsrWNh1gmyABC4MqEvkuZ8cygdvE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/team/6834177c-18b7-4688-9358-96318bbfd022/user/1dacec1e-957a-41d7-bb2e-28a359c0f9a5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"team",
+						"6834177c-18b7-4688-9358-96318bbfd022",
+						"user",
+						"1dacec1e-957a-41d7-bb2e-28a359c0f9a5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "11. Brisanje korisnika iz tima",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwiaWF0IjoxNjcwNjA4MzkwLCJleHAiOjE2NzA2MTE5OTB9.QpB34jNbD4_kxSwbsrWNh1gmyABC4MqEvkuZ8cygdvE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/team/6834177c-18b7-4688-9358-96318bbfd022/user/1dacec1e-957a-41d7-bb2e-28a359c0f9a5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"team",
+						"6834177c-18b7-4688-9358-96318bbfd022",
+						"user",
+						"1dacec1e-957a-41d7-bb2e-28a359c0f9a5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
