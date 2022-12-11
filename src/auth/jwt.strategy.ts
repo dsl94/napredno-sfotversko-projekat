@@ -5,7 +5,6 @@ import { InjectRepository } from "@nestjs/typeorm";
 import { UserRepository } from "./user.repository";
 import { JwtPayload } from "./jwt-payload.interface";
 import { User } from "./user.entity";
-import { ConfigService } from "@nestjs/config";
 import * as process from "process";
 
 @Injectable()
